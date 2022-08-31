@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:money_record/pages/login.dart';
+import 'package:money_record/pages/register.dart';
 
-class RegisterPages extends StatelessWidget {
-  const RegisterPages({Key? key}) : super(key: key);
+class LoginPages extends StatelessWidget {
+  const LoginPages({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -22,13 +22,6 @@ class RegisterPages extends StatelessWidget {
                   SizedBox(height: 40),
                   Column(
                     children: [
-                      TextFormField(
-                        decoration: InputDecoration(
-                          labelText: 'Name',
-                          hintText: "type name",
-                          border: OutlineInputBorder(),
-                        ),
-                      ),
                       SizedBox(height: 20),
                       TextFormField(
                         decoration: InputDecoration(
@@ -61,7 +54,7 @@ class RegisterPages extends StatelessWidget {
                         textStyle: TextStyle(fontSize: 24),
                       ),
                       onPressed: () {},
-                      child: Text("Register"),
+                      child: Text("Login"),
                     ),
                   ),
                   SizedBox(height: 20),
@@ -69,7 +62,7 @@ class RegisterPages extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Text(
-                        "Already have an account?  ",
+                        "Don't have an account yet?  ",
                         style: TextStyle(fontSize: 12),
                       ),
                       GestureDetector(
@@ -77,12 +70,12 @@ class RegisterPages extends StatelessWidget {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
-                              builder: (context) => LoginPages(),
+                              builder: (context) => RegisterPages(),
                             ),
                           );
                         },
                         child: Text(
-                          "Login",
+                          "Register",
                           style: TextStyle(
                             fontSize: 12,
                             color: Colors.lightGreen,
