@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:money_record/pages/landingPage.dart';
 import 'package:money_record/pages/login.dart';
 import 'package:money_record/pages/register.dart';
 
@@ -13,7 +14,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: LoginPages(),
+      home: LandingPages(),
     );
   }
 }
