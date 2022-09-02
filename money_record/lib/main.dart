@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:money_record/pages/landingPage.dart';
+import 'package:money_record/pages/landing_page.dart';
 import 'package:money_record/pages/login.dart';
 import 'package:money_record/pages/register.dart';
 
