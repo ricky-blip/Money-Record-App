@@ -1,6 +1,8 @@
 import 'dart:convert';
 
+import 'package:get/get.dart';
 import 'package:money_record/data/model/user.dart';
+import 'package:money_record/presentation/controller/controller.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class Session {
@@ -9,6 +11,10 @@ class Session {
     Map<String, dynamic> mapUser = user.toJson();
     String stringUser = jsonEncode(mapUser);
     bool success = await prefs.setString('user', stringUser);
+    if (success) {
+      final cUser = Get.put(CUser());
+      cUser.setData(user);
+    }
     return success;
   }
 
@@ -20,12 +26,16 @@ class Session {
       Map<String, dynamic> mapUser = jsonDecode(stringUser);
       user = User.fromJson(mapUser);
     }
+    final cUser = Get.put(CUser());
+    cUser.setData(user);
     return user;
   }
 
   static Future<bool> clearUser() async {
     final prefs = await SharedPreferences.getInstance();
     bool success = await prefs.remove('user');
+    final cUser = Get.put(CUser());
+    cUser.setData(User());
     return success;
   }
 }

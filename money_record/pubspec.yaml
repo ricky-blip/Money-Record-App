@@ -36,6 +36,8 @@ dependencies:
   cupertino_icons: ^1.0.2
   get: ^4.6.5
   shared_preferences: ^2.0.20
+  http: ^0.13.5
+  d_method: ^0.2.0 
 
 dev_dependencies:
   fl_chart: ^0.55.1
